@@ -1,4 +1,5 @@
-﻿string opcaoDesejada;
+﻿double a, b, resultado;
+string opcaoDesejada;
 
 Console.Clear();
 
@@ -16,14 +17,31 @@ opcaoDesejada = Console.ReadLine()!;
 switch (opcaoDesejada)
 {
     case "+":
-        Console.WriteLine("Você selecionou soma");
+        Console.WriteLine("---Soma A+B ---\n");
+        Console.WriteLine("digite os valores:");
+        a = Convert.ToDouble(Console.ReadLine());
+        b = Convert.ToDouble(Console.ReadLine());
+        resultado = a + b;
+        Console.WriteLine($"{a} mais {b} é {resultado}");
+
+        Console.WriteLine("\nPressione uma tecla para continuar...");
+        Console.ReadKey();
+
         break;
     case "-":
-        Console.WriteLine("Você selecionou subtração");
-        break;
-    case "*":
-        double a, b, resultado;
+        Console.WriteLine("---Subtração A-B ---\n");
 
+        Console.WriteLine("digite os valores:");
+        a = Convert.ToDouble(Console.ReadLine());
+        b = Convert.ToDouble(Console.ReadLine());
+        resultado = a - b;
+        Console.WriteLine($"{a} menos {b} é {resultado}");
+
+        Console.WriteLine("\nPressione uma tecla para continuar...");
+        Console.ReadKey();
+
+        break;
+        case "*":
         Console.WriteLine("--- Multiplicação A*B ---\n");
         Console.WriteLine("Digite os valores.");
 
@@ -41,9 +59,30 @@ switch (opcaoDesejada)
 
         break;
     case "/":
-        Console.WriteLine("Você selecionou divisão");
+        Console.WriteLine("--- Divisão A/B ---\n");
+        Console.WriteLine("Digite os valores.");
+
+        Console.Write("A = ");
+        a = Convert.ToDouble(Console.ReadLine());
+        Console.Write("B = ");
+        b = Convert.ToDouble(Console.ReadLine());
+        
+        resultado = a / b;
+
+        if (b == 0)
+        {
+            Console.WriteLine("não é possivel realizar a divisão");
+        }
+        else
+        {
+           resultado = a / b;
+        }
+
+        Console.WriteLine("\nPressione uma tecla para continuar...");
+        Console.ReadKey();
+
         break;
-    default:
+        default:
         Console.WriteLine("Opção inválida.");
         break;
 }
